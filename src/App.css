@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.Birds{
+  justify-content: left;
+  align-self: top;
+  align-items: left;
+  margin-top: 10vh;
+  padding-left: calc(10px + 5vw);
+  width: min(30vw, 300px);
+}
+.Background{
+  background: no-repeat url("./Images/Background.png") !important;
+  background: black;
+  background-size: cover !important;
+  height: 100vh;
+  width: 100vw;
+  /* z-index: -1; */
+
+}
+.Rect{
+  width: 210vw;
+  padding-left: 100px;
+  margin-right: -1000px;
+  height: 200px;
+  box-shadow: 0px 56px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-27.5deg) translate(-10%, -80%);
+}
+.Rect1{
+  width: 250vw;
+  padding-left: 100px;
+  margin-right: -50px;
+  height: 200px;
+  box-shadow: 0px 56px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-27.5deg) translate(-20%, 200%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Typewriter {
+  display: inline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Aboutme label{
+  font-size: large;
+  z-index: 3;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Navbar{
+  list-style: none;
+  height: 50px; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0px -0px;
 }
+.NavItem{
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 50px;
 
-.App-link {
-  color: #61dafb;
 }
+.NavButton{
+  width: auto;
+  height: 50px;
+}
+.Chonk{
+  
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
