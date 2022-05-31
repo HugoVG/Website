@@ -68,7 +68,7 @@ function App() {
 		</FormGroup>;
 	const GHFrames = <div style={{textAlign: "center", color: "white", textShadow: "black 0.1em 0.1em 0.2em", display: 'inline' }}>
 		<Typography variant="h2">
-			Proficiancy
+			Proficiancy +
 		</Typography>
 		<div>
 			<h3 >
@@ -174,10 +174,10 @@ function App() {
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center'}}>
-					<div style={{width: "100%", height: "100%",display: 'flex',
+					<div style={{width: "100%", height: "50%",display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center'}}>
-						<div style={{width: "25%", height: "100%",display: 'flex',
+						<div style={{width: "25%", height: "25%",display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'center',
 							alignItems: 'center' }}>
@@ -186,12 +186,14 @@ function App() {
 								</Typography>
 								<div style={{minWidth: "300px", width: "40vw"}}>
 									<Carousel showArrows={false} showThumbs={false} autoPlay={true} interval={4000} infiniteLoop={true}>
-										<Paper elevation={1} style={{ display: 'flex',
-											width: "100%", height: "100%",
-											backgroundColor: '#b6d4f2',
-											color: "white", textShadow: "black 0.1em 0.1em 0.2em",
-											justifyContent: 'center',
-											alignItems: 'center'}}>
+										<Paper elevation={1} 
+											style={{ display: 'flex',
+												width: "100%", height: "100%",
+												backgroundColor: '#b6d4f2',
+												color: "white", textShadow: "black 0.1em 0.1em 0.2em",
+												justifyContent: 'center',
+												alignItems: 'center'
+											}}>
 												<div>
 													<Typography variant="h2">RDM Race App</Typography>
 													<img src={RDMRaceApp} width={100} style={{paddingLeft: "50px", paddingRight: "50px"}} />
