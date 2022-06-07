@@ -8,20 +8,18 @@ import './App.css';
 import Button from '@mui/material/Button';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 import zIndex from '@mui/material/styles/zIndex';
-import Typing from './Typing';
-import { FormControlLabel, FormGroup, Paper, Switch, Typography } from '@mui/material';
-import { animated, SpringValue, useSpring } from 'react-spring';
-import { Carousel } from 'react-responsive-carousel';
+import { FormControlLabel, FormGroup, Switch, Typography } from '@mui/material';
+import { useSpring } from 'react-spring';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Label } from '@mui/icons-material';
 import { width } from '@mui/system';
-import BiOsCoop from  './Images/Bi_Os_Coop.png';
-import RDMRaceApp from './Images/Phidippides.png';
-import Makkr from './Images/duck.png';
+import { PreviousProjects } from './Components/PreviousProjects';
+import { HugoMainPage } from './Components/HugoMainPage';
 
 
 
 function App() {
+	const { height, width } = useWindowDimensions();
 	const parallax = useRef<IParallax>(null)
 	const scroll = (to: number) => {
 		if (parallax.current) {
@@ -71,7 +69,7 @@ function App() {
 			Proficiancy
 		</Typography>
 		<div>
-			<h3 >
+			<h3>
 				My Proficancy lies within the .Net ecosystem.<br/>I mostly use C# and have experience with ASP.NET Core,<br/> Entity Framework, WPF, and ASP.NET MVC,<br/> Winforms and ASP.NET Web API.
 			</h3>
 		</div>
@@ -130,32 +128,7 @@ function App() {
 				{/* #region About me */}
 				<ParallaxLayer offset={0} speed={0.1}
 					style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: "black", background: bg }}>
-					<div style={{justifyContent: 'center',textAlign: "center" , alignItems: 'center', color: "white", textShadow: "black 0.1em 0.1em 0.2em" }}  >
-						<Typography variant="h1">HugoVG</Typography>
-						<div className='Aboutme'>
-							<Typography variant="h2">
-								About Me:
-							</Typography>
-							<Typing/> <br/>							 
-							<Typography variant='h6' style={{justifyContent: 'center', alignItems: 'center', textAlign: "center"}}>
-								I am a software developer with a passion for creating small and performant applications<br/>
-								I mainly develop in C# and .NET Core, but I am also familiar with JavaScript and TypeScript.<br/>
-								I like Birds and gaming. 
-							</Typography>
-						</div>
-						<animated.div
-							className="Chonk"
-							style={{
-								position: "absolute",
-								width: 40,
-								height: 40,
-								zIndex: 19,
-								backgroundColor: '#b6d4f2',
-								borderRadius: 10,
-								...styles,
-							}}
-						/>
-					</div>
+					{HugoMainPage(styles)}
 				</ParallaxLayer>
 
 
@@ -174,66 +147,7 @@ function App() {
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center'}}>
-					<div style={{width: "100%", height: "100%",display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center'}}>
-						<div style={{width: "25%", height: "100%",display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							alignItems: 'center' }}>
-								<Typography variant="h2" style={{color: "white", textShadow: "black 0.1em 0.1em 0.2em"}}>
-									Previous Projects
-								</Typography>
-								<div style={{minWidth: "300px", width: "40vw"}}>
-									<Carousel showArrows={false} showThumbs={false} autoPlay={true} interval={4000} infiniteLoop={true}>
-										<Paper elevation={1} style={{ display: 'flex',
-											width: "100%", height: "100%",
-											backgroundColor: '#b6d4f2',
-											color: "white", textShadow: "black 0.1em 0.1em 0.2em",
-											justifyContent: 'center',
-											alignItems: 'center'}}>
-												<div>
-													<Typography variant="h2">RDM Race App</Typography>
-													<img src={RDMRaceApp} width={100} style={{paddingLeft: "50px", paddingRight: "50px"}} />
-													<Typography variant="h5">Languages:</Typography>
-													<Typography variant="subtitle1">Typescript, JavaScript</Typography>
-													<Typography variant="h5">Frameworks:</Typography>
-													<Typography variant="subtitle1">React, Prisma, MUI</Typography>
-													<Typography variant="body1">RDM Race app is a real time chat app<br/> developed for the Phidipidus race team at the RDM</Typography>
-												</div>
-										</Paper>
-										<Paper elevation={1} style={{width: "100%", height: "100%", display: 'flex',
-											justifyContent: 'center',
-											backgroundColor: '#f2acce',
-											color: "white", textShadow: "black 0.1em 0.1em 0.2em",
-											alignItems: 'center'}}>	
-											<div>
-												<Typography variant="h2">Bi-Os-Coop</Typography>
-												<img src={BiOsCoop} width={100} style={{paddingLeft: "50px", paddingRight: "50px"}}  />
-												<Typography variant="h5">Languages:</Typography>
-												<Typography variant="subtitle1">C#</Typography>
-												<Typography variant="body1">Bi-Os-Coop is a console app<br/> developed for project B</Typography>
-											</div>
-										</Paper>
-										<Paper elevation={0} style={{width: "100%", height: "100%", display: 'flex',
-											justifyContent: 'center',
-											backgroundColor: '#e8f0a1',
-											color: "white", textShadow: "black 0.1em 0.1em 0.2em",
-											alignItems: 'center'}}>	
-											<div style={{margin: '50px'}}>
-												<Typography variant="h2">Makkr</Typography>
-												<img src={Makkr} width={100} style={{paddingLeft: "50px", paddingRight: "50px"}}  />
-												<Typography variant="h5">Languages:</Typography>
-												<Typography variant="subtitle1">C#</Typography>
-												<Typography variant="h5">Frameworks: </Typography>
-												<Typography variant="subtitle1">ASP Web Api, Entity Framework, Xamarin.Forms</Typography>
-												<Typography variant="body1">Makkr is a tinder like meeting app<br/> where elderly people can find like minded individuals to hang out with,<br/> made to solve loneliness</Typography>
-											</div>
-										</Paper>
-									</Carousel>
-								</div>
-						</div>
-					</div>
+					{PreviousProjects}
 				</ParallaxLayer>
 				<ParallaxLayer offset={3} speed={1} style={{
 						display: 'flex',
@@ -243,7 +157,30 @@ function App() {
 					<div style={{backgroundColor: "purple", width: "100%", height: "100%",display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center'}}>
-						<p>Scroll down\?</p>
+						<div style={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center'}}>
+							<div style={{
+								width: "50%", height: "100%", display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'center',
+								alignItems: 'center'}}>
+								<Typography variant="h4" 
+									style={{textAlign: "center", color: "white", textShadow: "black 0.1em 0.1em 0.2em", display: 'inline', width: "50%" }}>
+									Want to hire me and have something i'm up for?</Typography>
+							</div>
+
+							<div style={{
+								display: 'flex',
+								flexDirection: 'row',
+								flexWrap: 'wrap',
+								justifyContent: 'center',
+								alignItems: 'center'}}>
+								{listshield()}
+							</div>
+						</div>
 					</div>
 				</ParallaxLayer>
 
@@ -261,6 +198,70 @@ function App() {
 			</Parallax>
 		</div>
 	);
-	}
+}
+function ShieldMaker(url: string, alt: string, height2: number = 60) {
+	const { height, width } = useWindowDimensions();
 
-	export default App;
+	return(<img src={url} alt={alt} height={(width < 500 ? 35 : width / 25 )} />);
+}
+function listshield(){
+	
+	const imageShield: [string, string][] = [
+		["https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white", "C#"],
+		["https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white", ".NET"],
+		["https://img.shields.io/badge/Xamarin-3498DB?style=for-the-badge&logo=xamarin&logoColor=white", "Xamarin"],
+		["https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white", "Rust"],
+		["https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white", "Java"],
+		["https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white", "TypeScript"],
+		["https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB", "React"],
+		["https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white", "Node"],
+		["https://img.shields.io/badge/SQL-000000?style=for-the-badge&logo=sql&logoColor=white", "SQL"],
+		["https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white", "HTML"],
+		["https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white", "CSS"],
+		["https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E", "JavaScript"],
+		["https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white", "Json"],
+		["https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white", "MIU"],
+		["https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue", "Python"],
+		["https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white", "Unity"],
+		["https://img.shields.io/badge/KFC-F40027?style=for-the-badge&logo=kfc&logoColor=white", "KFC"],
+		["https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white", "OpenCV"],
+		["https://img.shields.io/badge/WebAssembly-654FF0?style=for-the-badge&logo=WebAssembly&logoColor=white", "WASM"],
+		["https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white", "AWS"],
+		["https://img.shields.io/badge/Adobe%20XD-470137?style=for-the-badge&logo=Adobe%20XD&logoColor=#FF61F6", "AdobeXD"],
+		["https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white","Figma"],
+		["https://img.shields.io/badge/microsoft%20azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white", "Azure"],
+		["https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white", "Md"],
+		["https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white", "GitHub Pages"],
+		["https://img.shields.io/badge/NuGet-004880?style=for-the-badge&logo=nuget&logoColor=white", "NuGet"],
+		["https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white", "JWT"]
+	];
+	return(
+		imageShield.map(([url, alt]) => ShieldMaker(url, alt))
+	);
+}
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+export default App;
+
+
+
