@@ -66,7 +66,7 @@ function App() {
 		</FormGroup>;
 	const GHFrames = <div style={{textAlign: "center", color: "white", textShadow: "black 0.1em 0.1em 0.2em", display: 'inline' }}>
 		<Typography variant="h2">
-			Proficiancy
+			Proficiancy +
 		</Typography>
 		<div>
 			<h3>
