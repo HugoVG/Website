@@ -13,7 +13,7 @@ export function BiOsCoopFunc() {
 		}}>
 			<div>
 				<Typography variant="h2">Bi-Os-Coop</Typography>
-				<img src={BiOsCoop} width={100} style={{ paddingLeft: "50px", paddingRight: "50px" }} />
+				<img src={BiOsCoop} width={100} alt="BiOsCoop" style={{ paddingLeft: "50px", paddingRight: "50px" }} />
 				<Typography variant="h5">Languages:</Typography>
 				<Typography variant="subtitle1">C#</Typography>
 				<Typography variant="body1">Bi-Os-Coop is a console app<br /> developed for project B</Typography>

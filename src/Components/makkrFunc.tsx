@@ -12,7 +12,7 @@ export function makkrFunc() {
 	}}>
 		<div style={{ margin: '50px' }}>
 			<Typography variant="h2">Makkr</Typography>
-			<img src={Makkr} width={100} style={{ paddingLeft: "50px", paddingRight: "50px" }} />
+			<img src={Makkr} width={100} alt="makkr" style={{ paddingLeft: "50px", paddingRight: "50px" }} />
 			<Typography variant="h5">Languages:</Typography>
 			<Typography variant="subtitle1">C#</Typography>
 			<Typography variant="h5">Frameworks: </Typography>

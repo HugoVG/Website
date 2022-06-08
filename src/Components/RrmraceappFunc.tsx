@@ -13,7 +13,7 @@ export function RrmraceappFunc() {
 	}}>
 		<div>
 			<Typography variant="h2">RDM Race App</Typography>
-			<img src={RDMRaceApp} width={100} style={{ paddingLeft: "50px", paddingRight: "50px" }} />
+			<img src={RDMRaceApp} alt="RDM" width={100} style={{ paddingLeft: "50px", paddingRight: "50px" }} />
 			<Typography variant="h5">Languages:</Typography>
 			<Typography variant="subtitle1">Typescript, JavaScript</Typography>
 			<Typography variant="h5">Frameworks:</Typography>
